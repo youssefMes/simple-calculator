@@ -14,10 +14,6 @@ class CalculationController extends AbstractController
      */
     public function index(Request $request)
     {
-
-
-
-
         if ($request->isXmlHttpRequest() || $request->query->get('showJson') == 1) {
             $operation = $request->get('operation');
             $fValue = $request->get('fValue');
@@ -35,16 +31,10 @@ class CalculationController extends AbstractController
                 $res = $fValue / $sValue;
             }
 
-
-
-
             $jsonData = array('finaleResult' => $res);
-
 
             return new JsonResponse($jsonData);
         } else {
-
-
             return $this->render('calculation/index.html.twig');
         }
     }
