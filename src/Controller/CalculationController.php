@@ -30,9 +30,7 @@ class CalculationController extends AbstractController
             } elseif ($operation == "Divide") {
                 $res = $fValue / $sValue;
             }
-
             $jsonData = array('finaleResult' => $res);
-
             return new JsonResponse($jsonData);
         } else {
             return $this->render('calculation/index.html.twig');
